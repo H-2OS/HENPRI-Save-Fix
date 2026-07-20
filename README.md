@@ -22,6 +22,7 @@
 
 1. **saveg.dat损坏导致的存档丢失修复**：Steam Cloud 同步覆盖 `saveg.dat` → Load 界面空白。实际上 `saveNNNN.dat` 文件完整无损，补丁可从磁盘恢复。
 2. **saveg.dat完好时的语音收藏备份**：`sys.favo` 仅存在于 `saveg.dat` 中，没有独立备份。补丁创建 `favodata/` 目录进行冗余存储，解决 Steam Cloud 覆盖或未知原因导致的语音收藏丢失问题。
+ 
  注：saveg.dat损坏时（表现为存档不显示）无法导出语音收藏生成备份，因为其已丢失。
 
 ### 要求
@@ -339,6 +340,7 @@ fileio_template.lua（定义）
 
 1. **saveg.dat損壞導致的存檔遺失修復**：Steam Cloud 同步覆蓋 `saveg.dat` → Load 介面空白。實際上 `saveNNNN.dat` 檔案完整無損，修補程式可從磁碟復原。
 2. **saveg.dat完好時的語音收藏備份**：`sys.favo` 僅存在於 `saveg.dat` 中，沒有獨立備份。修補程式建立 `favodata/` 目錄進行冗餘儲存，解決 Steam Cloud 覆蓋或未知原因導致的語音收藏遺失問題。
+ 
  註：saveg.dat損壞時（表現為存檔不顯示）無法匯出語音收藏生成備份，因為其已遺失。
 
 ### 要求
@@ -674,6 +676,7 @@ A personal **save recovery + voice favorite backup patch** for HENPRI (Steam edi
 3. Launch the game
 4. Open the Load page — saves will appear with correct dates but blank chapter titles and dialogue text
 5. Load any of the above saves (no need to re-save); upon returning to the Load page, the previously blank fields will display chapter titles and dialogue text
+ 
  Note: Voice favorite export requires no action. All processes are automatic — backup export runs at game startup (after normal game exit, you can find the favodata folder and voice favorite saves in the game directory). Disaster recovery triggers on save load, and day-to-day sync of new/deleted/moved favorites happens silently in the background
 
 **Uninstall the patch:**
