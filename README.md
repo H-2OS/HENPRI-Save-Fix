@@ -39,7 +39,8 @@
 3. 启动游戏
 4. 进入 Load 页面，将看到拥有正确日期但章节和角色语句空白的存档
 5. 对任一存档进行读档操作（无需存档），完成读档后返回 Load 页面，空白部分将显示章节及角色语句
- 注：语音收藏的导出无需任何操作。所有流程均为自动——备份导出在游戏启动时自动完成（游戏正常结束后可在游戏目录下找到favodata文件夹以及其中的语音收藏存档）。损坏恢复在加载存档时自动触发，日常新增/删除/移动的同步在后台静默执行
+
+注：语音收藏的导出无需任何操作。所有流程均为自动——备份导出在游戏启动时自动完成（游戏正常结束后可在游戏目录下找到favodata文件夹以及其中的语音收藏存档）。损坏恢复在加载存档时自动触发，日常新增/删除/移动的同步在后台静默执行
 
 **卸载补丁：**
 
@@ -355,6 +356,7 @@ fileio_template.lua（定义）
 3. 啟動遊戲
 4. 進入 Load 頁面，將看到擁有正確日期但章節和角色語句空白的存檔
 5. 對任一存檔進行讀檔操作（無需存檔），完成讀檔後返回 Load 頁面，空白部分將顯示章節及角色語句
+ 
  註：語音收藏的匯出無需任何操作。所有流程均為自動——備份匯出在遊戲啟動時自動完成（遊戲正常結束後可在遊戲目錄下找到favodata資料夾以及其中的語音收藏存檔）。損壞恢復在載入存檔時自動觸發，日常新增/刪除/移動的同步在背景靜默執行
 
 **解除安裝修補程式：**
@@ -654,6 +656,7 @@ A personal **save recovery + voice favorite backup patch** for HENPRI (Steam edi
 
 1. **Save loss recovery when saveg.dat is corrupted**: Steam Cloud sync overwrites `saveg.dat` → Load menu becomes empty. The `saveNNNN.dat` files are actually fully intact — the patch recovers them from disk.
 2. **Voice favorite backup when saveg.dat is intact**: `sys.favo` exists only in `saveg.dat` with no independent backup. The patch creates a `favodata/` directory for redundant storage, solving voice favorite loss caused by Steam Cloud overwrites or unknown reasons.
+ 
  Note: When saveg.dat is corrupted (indicated by saves not appearing), voice favorites cannot be exported for backup because they are already lost.
 
 ### Requirements
